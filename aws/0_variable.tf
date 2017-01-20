@@ -47,6 +47,10 @@ variable "private_segment2" {
   default = "192.168.101.0/24"
 }
 
+variable "myip" {
+  default = "153.156.43.75/32"
+}
+
 variable "aws_amis" {
   default = {
       "ap-northeast-1" = "ami-2b08f44a"
