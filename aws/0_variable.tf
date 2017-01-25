@@ -15,6 +15,10 @@ variable "app_name" {
   default = "daifuku"
 }
 
+variable "aws_id" {
+  default = "734729694574"
+}
+
 variable "region" {
   default = "ap-northeast-1"
 }
