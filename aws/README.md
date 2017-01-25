@@ -6,6 +6,12 @@ Teraformを用いる
 
 + 1_network_storageを初期作成の後、個別サービスは個別にprovisioningする
 + 全て再構築の際は、prefixの順にprovisioningする
++ 個別サービスは以下でフォルダを作成し、provisioningfileを作成する
+
+```
+mkdir [prefix[0-9]]_[サービス名]
+cp conf/*tf [prefix[0-9]]_[サービス名]
+```
 
 ## access_key / secret_key
 
@@ -59,5 +65,5 @@ terraform show
 
 ```
 terraform plan -destroy -out=terraform.tfstate
-terraform apply terraform.tfstate
+pwd
 ```
