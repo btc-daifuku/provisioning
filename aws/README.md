@@ -29,14 +29,15 @@ secret_key="[シークレットキーを記載]"
 terraform plan
 ```
 
-### when required vars
+required vars
 
 ```
 terraform plan \
  -var 'ssh_key_name=hirosue' \
- -var 'security_group_public=sg-8d8019ea' \
- -var 'public_subnet_1=subnet-9df09aeb' \
- -var 'public_subnet_2=subnet-10962548'
+ -var 'vpc_id=vpc-7463ca10' \
+ -var 'security_group_public=sg-57138830' \
+ -var 'public_subnet_1=subnet-44166232' \
+ -var 'public_subnet_2=subnet-217dcf79'
 ```
 
 ## apply
@@ -45,14 +46,15 @@ terraform plan \
 terraform apply
 ```
 
-### when required vars
+required vars
 
 ```
 terraform apply \
  -var 'ssh_key_name=hirosue' \
- -var 'security_group_public=sg-cc63fbab' \
- -var 'public_subnet_1=subnet-c3a7d2b5' \
- -var 'public_subnet_2=subnet-e0fe4cb8'
+ -var 'vpc_id=vpc-7463ca10' \
+ -var 'security_group_public=sg-57138830' \
+ -var 'public_subnet_1=subnet-44166232' \
+ -var 'public_subnet_2=subnet-217dcf79'
 ```
 
 ## show
@@ -61,9 +63,8 @@ terraform apply \
 terraform show
 ```
 
-## destory
+## destory :boom:
 
 ```
-terraform plan -destroy -out=terraform.tfstate
-pwd
+terraform destory
 ```

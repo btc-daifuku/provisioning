@@ -6,6 +6,9 @@
 variable "ssh_key_name" {}
 
 # security group public
+variable "vpc_id" {}
+
+# security group public
 variable "security_group_public" {}
 
 # public subnet1

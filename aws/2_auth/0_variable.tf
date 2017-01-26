@@ -62,5 +62,5 @@ variable "aws_amis" {
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  default = "m4.large"
 }
