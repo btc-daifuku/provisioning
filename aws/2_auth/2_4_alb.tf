@@ -1,8 +1,8 @@
 resource "aws_alb" "auth" {
   name = "${var.app_name}-auth-alb"
   internal = false
-  security_groups = ["${var.security_group_public}"]
-  subnets = ["${var.public_subnet_1}","${var.public_subnet_2}"]
+  security_groups = ["${data.aws_security_group.public.id}"]
+  subnets = ["${data.aws_subnet.public_1.id}","${data.aws_subnet.public_2.id}"]
 
   access_logs {
     bucket = "${var.app_name}-accesslog"
@@ -21,7 +21,7 @@ resource "aws_alb_target_group" "auth" {
   name     = "${var.app_name}-target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "${var.vpc_id}"
+  vpc_id   = "${data.aws_vpc.selected.id}"
 
   tags {
       Name = "${var.app_name} target-group"

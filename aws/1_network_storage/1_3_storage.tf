@@ -13,14 +13,13 @@ resource "aws_s3_bucket" "lb-log" {
 
 data "aws_elb_service_account" "lb-log" {}
 
-# TODO resourceへの変数埋め込み
 data "aws_iam_policy_document" "lb-log" {
     statement {
         actions = [
             "s3:PutObject",
         ]
         resources = [
-            "arn:aws:s3:::daifuku-accesslog/alb_log/AWSLogs/${var.aws_id}/*",
+            "arn:aws:s3:::${var.app_name}-accesslog/alb_log/AWSLogs/${var.aws_id}/*",
         ]
         "principals" = {
           type = "AWS"

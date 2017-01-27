@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "auth" {
     instance_type = "${var.instance_type}"
     iam_instance_profile = "ecsInstanceRole"
     security_groups = [
-        "${var.security_group_public}"
+        "${data.aws_security_group.public.id}"
     ]
 
     user_data = "${file("bash/userdata.sh")}"
@@ -14,7 +14,7 @@ resource "aws_launch_configuration" "auth" {
 resource "aws_autoscaling_group" "auth" {
   availability_zones = ["${var.az1}"]
   name = "${var.app_name}-autoscaling-group"
-  vpc_zone_identifier  = ["${var.public_subnet_1}"]
+  vpc_zone_identifier  = ["${data.aws_subnet.public_1.id}"]
   max_size = 1
   min_size = 1
   desired_capacity = 1

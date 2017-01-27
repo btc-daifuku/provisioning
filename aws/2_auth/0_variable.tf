@@ -64,3 +64,59 @@ variable "aws_amis" {
 variable "instance_type" {
   default = "m4.large"
 }
+
+#######################
+# get current id
+#######################
+
+# get vpc id
+data "aws_vpc" "selected" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*"]
+  }
+}
+
+# get subnet id
+data "aws_subnet" "public_1" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*public-subnet1*"]
+  }
+}
+
+data "aws_subnet" "public_2" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*public-subnet2*"]
+  }
+}
+
+data "aws_subnet" "private_1" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*private-subnet1*"]
+  }
+}
+
+data "aws_subnet" "private_2" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*private-subnet2*"]
+  }
+}
+
+# get security group id
+data "aws_security_group" "public" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*public-firewall*"]
+  }
+}
+
+data "aws_security_group" "private" {
+  filter {
+    name   = "tag-value"
+    values = ["*${var.app_name}*private-firewall*"]
+  }
+}

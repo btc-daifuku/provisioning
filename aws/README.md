@@ -32,12 +32,7 @@ terraform plan
 required vars
 
 ```
-terraform plan \
- -var 'ssh_key_name=hirosue' \
- -var 'vpc_id=vpc-7463ca10' \
- -var 'security_group_public=sg-57138830' \
- -var 'public_subnet_1=subnet-44166232' \
- -var 'public_subnet_2=subnet-217dcf79'
+terraform plan -var 'ssh_key_name=hirosue'
 ```
 
 ## apply
@@ -49,12 +44,7 @@ terraform apply
 required vars
 
 ```
-terraform apply \
- -var 'ssh_key_name=hirosue' \
- -var 'vpc_id=vpc-7463ca10' \
- -var 'security_group_public=sg-57138830' \
- -var 'public_subnet_1=subnet-44166232' \
- -var 'public_subnet_2=subnet-217dcf79'
+terraform apply -var 'ssh_key_name=hirosue'
 ```
 
 ## show
@@ -67,4 +57,10 @@ terraform show
 
 ```
 terraform destory
+```
+
+required vars
+
+```
+terraform destroy -var 'ssh_key_name=hirosue'
 ```
