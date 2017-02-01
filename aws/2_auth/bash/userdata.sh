@@ -1,2 +1,6 @@
 #!/bin/bash
-echo ECS_CLUSTER=daifuku-auth >> /etc/ecs/ecs.config
+
+# set target ecs cluster
+cat << EOT >> /etc/ecs/ecs.config
+ECS_CLUSTER=daifuku-auth
+EOT
