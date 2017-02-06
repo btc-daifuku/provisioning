@@ -1,3 +1,11 @@
+data "template_file" "user_data" {
+  template = "${file("bash/userdata.sh")}"
+
+  vars {
+    cluster_name = "${aws_ecs_cluster.auth.name}"
+  }
+}
+
 resource "aws_launch_configuration" "auth" {
     name = "${var.app_name}-launch-configuration"
     image_id = "${lookup(var.aws_amis, var.region)}"
@@ -8,7 +16,7 @@ resource "aws_launch_configuration" "auth" {
         "${data.aws_security_group.public.id}"
     ]
 
-    user_data = "${file("bash/userdata.sh")}"
+    user_data = "${data.template_file.user_data.rendered}"
 }
 
 resource "aws_autoscaling_group" "auth" {

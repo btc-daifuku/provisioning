@@ -1,3 +1,3 @@
 resource "aws_cloudwatch_log_group" "auth" {
-  name = "awslogs-daifuku"
+  name = "awslogs-${var.app_name}"
 }

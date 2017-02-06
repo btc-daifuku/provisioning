@@ -3,6 +3,7 @@
 + OpenAMを利用
 + ECSで構築
 + ベースイメージはalpine
++ 利用するイメージはOpenAMをダウンロード(tag:latest)した後、GUIでsetting(tag:setting)した物を用いる
 
 ## コンテナへログイン
 

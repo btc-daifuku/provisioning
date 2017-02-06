@@ -7,6 +7,7 @@ Teraformを用いる
 + 1_network_storageを初期作成の後、個別サービスは個別にprovisioningする
 + 全て再構築の際は、prefixの順にprovisioningする
 + 個別サービスは以下でフォルダを作成し、provisioningfileを作成する
++ Route53 Hosted zoneのみ予め設定されている前提
 
 ```
 mkdir [prefix[0-9]]_[サービス名]
