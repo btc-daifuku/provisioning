@@ -30,7 +30,7 @@ secret_key="[シークレットキーを記載]"
 terraform plan
 ```
 
-required vars
+use vars
 
 ```
 terraform plan -var 'ssh_key_name=hirosue'
@@ -42,7 +42,7 @@ terraform plan -var 'ssh_key_name=hirosue'
 terraform apply
 ```
 
-required vars
+use vars
 
 ```
 terraform apply -var 'ssh_key_name=hirosue'
@@ -60,7 +60,7 @@ terraform show
 terraform destory
 ```
 
-required vars
+use vars
 
 ```
 terraform destroy -var 'ssh_key_name=hirosue'
