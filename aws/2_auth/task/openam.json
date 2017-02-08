@@ -2,7 +2,7 @@
   {
     "name": "OpenAM",
     "image": "734729694574.dkr.ecr.ap-northeast-1.amazonaws.com/openam:setting",
-    "memory": 1024,
+    "memory": 512,
     "essential": true,
     "portMappings": [
       {
@@ -20,7 +20,7 @@
     "environment": [
         {
             "name": "CATALINA_OPTS",
-            "value": "-server -Xmx1g -Xms1g"
+            "value": "-server -Xmx512m -Xms512m"
         }
     ]
   }
