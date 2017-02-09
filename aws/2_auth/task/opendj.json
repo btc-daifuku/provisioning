@@ -9,31 +9,19 @@
         "containerPort": 389
       }
     ],
-    "volumes": [
+    "mountPoints": [
       {
-        "name": "db",
-        "host": {
-          "sourcePath": "/ecs/db"
-        }
+        "sourceVolume": "db",
+        "containerPath": "/opt/opendj/db"
       }
     ],
-    "containerDefinitions":[
-      {
-        "mountPoints": [
-          {
-            "sourceVolume": "db",
-            "containerPath": "/opt/opendj/db"
-          }
-        ],
-        "logConfiguration": {
-            "logDriver": "awslogs",
-            "options": {
-                "awslogs-group": "awslogs-${app_name}-auth-log",
-                "awslogs-region": "${aws_region}",
-                "awslogs-stream-prefix": "awslogs-${app_name}-opendj"
-            }
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "awslogs-${app_name}-auth-log",
+            "awslogs-region": "${aws_region}",
+            "awslogs-stream-prefix": "awslogs-${app_name}-opendj"
         }
-      }
-    ]
+    }
   }
 ]

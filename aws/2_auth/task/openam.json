@@ -1,7 +1,7 @@
 [
   {
     "name": "OpenAM",
-    "image": "734729694574.dkr.ecr.ap-northeast-1.amazonaws.com/openam:setting",
+    "image": "734729694574.dkr.ecr.ap-northeast-1.amazonaws.com/openam",
     "memory": 512,
     "essential": true,
     "portMappings": [

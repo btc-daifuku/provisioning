@@ -35,6 +35,11 @@ resource "aws_ecs_task_definition" "opendj" {
   family = "opendj"
   container_definitions = "${data.template_file.opendj_task.rendered}"
 
+  volume {
+    name = "db"
+    host_path = "/ecs/db"
+  }
+
   depends_on = [
     "aws_cloudwatch_log_group.auth"
   ]
